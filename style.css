@@ -11,13 +11,96 @@ body {
     color: white;
     overflow-x: hidden;
     text-align: center;
+    animation: pageFade 1.5s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-section {
+    position: relative;
+    margin-top: 50px;
 }
 
 .title {
-    margin-top: 50px;
+    font-family: 'Cinzel', serif;
     font-size: 4rem;
-    letter-spacing: 15px;
+    letter-spacing: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
 }
+
+.lightning-line {
+    width: 60%;
+    margin-top: 20px;
+  
+}    
+
+#lightningPath {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    
+    animation: drawRay 1.8s ease-out forwards;
+
+    filter:
+        drop-shadow(0 0 2px white)
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 12px white);
+}
+
+@keyframes drawRay {
+    from {
+        stroke-dashoffset: 500;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#rayDot {
+    opacity: 0;
+
+    animation: showDot 1.8s ease-out forwards;
+
+    filter:
+        drop-shadow(0 0 4px white)
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 20px white);
+}
+
+@keyframes showDot {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-quote {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-family: Georgia, serif;
+    color: rgba(255,255,255,0.9);
+    min-height: 40px;
+    white-space: nowrap;
+}
+
 
 .tile-container {
     display: flex;
@@ -40,6 +123,23 @@ body {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     box-shadow: 0 0 15px white;
 }
+
+.tile {
+    animation: floatTiles 4s ease-in-out infinite;
+}
+
+@keyframes floatTiles {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 
 .tile:hover {
     transform: rotateY(180deg) scale(1.1);
