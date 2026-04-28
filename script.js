@@ -64,6 +64,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+let lastCommentTime = 0;
+
 const commentForm = document.getElementById("commentForm");
 const commentList = document.getElementById("commentList");
 
@@ -80,21 +82,43 @@ async function loadComments() {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
 
-    const div = document.createElement("div");
-    div.classList.add("comment-box");
+    //const div = document.createElement("div");
+   // div.classList.add("comment-box");
 
-    div.innerHTML = `
-      <strong>${data.name}</strong>
-      <p>${data.comment}</p>
-    `;
+   // div.innerHTML = `
+     // <strong>${data.name}</strong>
+     // <p>${data.comment}</p>
+  //  `;
 
-    commentList.appendChild(div);
+  //  commentList.appendChild(div);
+      const div = document.createElement("div");
+div.classList.add("comment-box");
+
+const nameElement = document.createElement("strong");
+nameElement.textContent = data.name;
+
+const commentElement = document.createElement("p");
+commentElement.textContent = data.comment;
+
+div.appendChild(nameElement);
+div.appendChild(commentElement);
+
+commentList.appendChild(div);
   });
 }
 
 commentForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+    const now = Date.now();
 
+if (now - lastCommentTime < 30000) {
+    alert("Please wait 30 seconds before posting again.");
+    return;
+}
+
+lastCommentTime = now;
+
+ 
   const name =
     document.getElementById("nameInput").value || "Anonymous";
 
