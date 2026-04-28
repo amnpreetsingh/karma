@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KARMA</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -26,8 +27,9 @@
     <div class="comment-section">
         <h2>Leave Your Trace</h2>
         <form id="commentForm">
-            <input type="text" id="nameInput" placeholder="Your name (optional)">
+            <input type="text" id="nameInput" placeholder="Your name">
             <textarea id="commentInput" placeholder="Leave a thought..."></textarea>
+            <div class="g-recaptcha" data-sitekey="6Lfk3c4sAAAAAFCoqMHVLMubCcaM9JcqE-qjShyJ"></div>
             <button type="submit">Post</button>
         </form>
 
