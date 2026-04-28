@@ -206,6 +206,20 @@ body {
     color: black;
 }
 
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.85);
+    transform-origin: center;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.75);
+    }
+}
+
 .comment-box {
     margin-top: 20px;
     padding: 15px;
