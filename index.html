@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KARMA</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
     <div class="background"></div>
+    <div class="hero-section">
 
     <h1 class="title">KARMA</h1>
+
+        <svg class="lightning-line" viewBox="0 0 600 100">
+    
+    <!-- glowing streak -->
+    <line 
+        id="lightningPath"
+        x1="50"
+        y1="50"
+        x2="550"
+        y2="50"
+        stroke="white"
+        stroke-width="2.5"
+        stroke-linecap="round"
+    />
+
+    <!-- bright endpoint -->
+    <circle
+        id="rayDot"
+        cx="550"
+        cy="50"
+        r="5"
+        fill="white"
+    />
+    
+</svg> 
+         <p class="hero-quote" id="heroQuote"></p>
+    </div>
 
     <div class="tile-container">
         <div class="tile" data-message="Knowledge - is dangerous when memorized, powerful when lived.">K</div>
