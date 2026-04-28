@@ -28,6 +28,29 @@ body {
     margin-top: 50px;
 }
 
+.tap-instruction {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: Arial, sans-serif;
+    animation: fadePulse 2.5s infinite;
+}
+
+@keyframes fadePulse {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
 .title {
     font-family: 'Cinzel', serif;
     font-size: 4rem;
