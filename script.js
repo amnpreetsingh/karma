@@ -1,4 +1,4 @@
-const quoteText = "Forged in darkness. Drawn to light.";
+const quoteText = "Caught you Fella !";
 const quoteElement = document.getElementById("heroQuote");
 
 const words = quoteText.split(" ");
